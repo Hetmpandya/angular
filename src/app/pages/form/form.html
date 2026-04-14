@@ -1,0 +1,43 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+    Name : 
+    <input type="text" formControlName="name">
+    @if(form.controls.name.touched && form.controls.name.invalid){
+        <p>Name is required</p>
+    }
+    <br><br>
+
+    Department :
+    <input type="text" formControlName="department">
+    @if(form.controls.department.touched && form.controls.department.invalid){
+        <p>Department is required</p>
+    }
+    <br><br>
+
+    Salary : 
+    <input type="number" formControlName="salary">
+    @if(form.controls.salary.touched && form.controls.salary.invalid){
+        <p>Salary is required</p>
+    }
+    <br><br>
+
+    Status : 
+    <select formControlName="status">
+        <option [ngValue]="true">True</option>
+        <option [ngValue]="false">False</option>
+    </select>
+    @if(form.controls.status.touched && form.controls.status.invalid){
+        <p>Status is required</p>
+    }
+    <br><br>
+
+    Employee Type : 
+    <input type="text" formControlName="employetype">
+    @if(form.controls.employetype.touched && form.controls.employetype.invalid){
+        <p>Employee Type is required</p>
+    }
+    <br><br>
+
+    <button type="submit" [disabled]="form.invalid">Submit</button>
+
+</form>

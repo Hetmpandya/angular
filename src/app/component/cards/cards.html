@@ -1,0 +1,32 @@
+<nav class="nav">
+    <div class="main">
+        <h2 class="title">Title</h2>
+        <ul>
+            <a href="public/src.zip" download>
+                <button>Download Code</button>
+            </a>
+            <button (click)="go()">Add detail +</button>
+        </ul>
+    </div>    
+</nav>
+
+<div class="main-card">
+    @for(nm of names; track nm; let i = $index){  
+        <div class="card">
+                <ul>
+                <li>Name : {{ nm.name }} </li>
+                <li>Department : {{ nm.department }} </li>
+                <li>Salary : {{ nm.salary }}</li>
+                <li>Status : {{ nm.status }}</li>
+                <li>Employee Type : {{ nm.employetype }} </li>
+                </ul>
+    
+        
+                <button (click)="updateItem(i)">Edit </button>
+                <button (click)="deleteItem(i)">delete </button>
+        </div>
+        }
+</div>
+
+
+
